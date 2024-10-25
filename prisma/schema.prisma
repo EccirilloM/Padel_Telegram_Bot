@@ -1,0 +1,24 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Calendar {
+  id        Int    @id @default(autoincrement())
+  day       String // Giorno della settimana (es. "Lunedì", "Martedì", ecc.)
+  startTime String // Ora di inizio (es. "08:15")
+  endTime   String // Ora di fine (es. "10:15")
+  userId    Int // Collegamento con l'utente
+  user      Player @relation(fields: [userId], references: [id]) // Collegamento corretto
+}
+
+model Player {
+  id        Int        @id @default(autoincrement())
+  username  String     @unique
+  level     Float
+  calendars Calendar[] // Relazione con il calendario
+}
