@@ -19,7 +19,8 @@ bot.telegram.setMyCommands([
   { command: 'updatecalendar', description: '(orario polimi testuale) aggiorna calendario' },
   { command: 'showplayeron', description: '(username giorno) mostra se il giocatore può giocare quel giorno' },
   { command: 'showplayerson', description: '(giorno) mostra tutti i giocatori del giorno' },
-  {command: 'showplayers', description: 'Mostra tutti i giocatori registrati'}
+  {command: 'showplayers', description: 'Mostra tutti i giocatori registrati'},
+  { command: 'help', description: 'Mostra una guida al bot' },
 ]);
 
 
